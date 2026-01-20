@@ -43,21 +43,19 @@ public class VueAccueil extends JPanel {
 
         // --- 4. PLACEMENT ---
         
-        // >> LE LOGO (Prend toute la place au-dessus)
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 1.0;
-        gbc.weighty = 1.0; // C'est CA le secret : il prend tout l'espace vertical dispo
-        gbc.anchor = GridBagConstraints.CENTER; // Le logo reste centré dans son grand espace
+        gbc.weighty = 1.0; 
+        gbc.anchor = GridBagConstraints.CENTER; 
         gbc.fill = GridBagConstraints.NONE;
         add(labelLogo, gbc);
 
         // >> LE BOUTON (Tout en bas)
         gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.weighty = 0.0; // Lui ne prend pas d'espace élastique
-        gbc.anchor = GridBagConstraints.PAGE_END; // On l'ancre tout en bas de la page
-        // Marge : (Haut, Gauche, BAS, Droite). J'ai mis 50px en bas pour l'esthétique.
+        gbc.weighty = 0.0; 
+        gbc.anchor = GridBagConstraints.PAGE_END; 
         gbc.insets = new Insets(0, 0, 50, 0); 
         add(boutonJouer, gbc);
     }

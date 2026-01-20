@@ -31,13 +31,13 @@ public class VueMainCroupier extends JPanel implements EcouteurModele {
         setPreferredSize(new Dimension(600, 150));
     }
 
-    /** Méthode à appeler quand le croupier commence à jouer */
+    
     public void revelerCartes() {
-        proxy.revelerCartes(); // toutes les cartes deviennent visibles
-        repaint();             // force la mise à jour graphique
+        proxy.revelerCartes(); 
+        repaint();             
     }
 
-    /** Réinitialiser la vue pour une nouvelle partie (cacher la première carte) */
+    
     public void cacherPremiereCarte() {
         proxy.cacherPremiereCarte();
         repaint();
@@ -52,15 +52,15 @@ public class VueMainCroupier extends JPanel implements EcouteurModele {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        List<Carte> visibles = proxy.getCartesVisibles(); // récupère selon état du proxy
+        List<Carte> visibles = proxy.getCartesVisibles(); 
         int totalCartes = jeu.getCroupier().getMain().taille();
 
         int x = 10;
 
-        // 2️⃣ Cartes cachées
+        
         int cartesCachees = totalCartes - visibles.size();
         for (int i = 0; i < cartesCachees; i++) {
-            g.setColor(new Color(20, 60, 20)); // couleur du dos de carte
+            g.setColor(new Color(20, 60, 20)); 
             g.fillRoundRect(x, 20, LARGEUR_CARTE, HAUTEUR_CARTE, 12, 12);
 
             g.setColor(Color.BLACK);
@@ -69,7 +69,7 @@ public class VueMainCroupier extends JPanel implements EcouteurModele {
             x += ESPACEMENT;
         }
 
-        // 1️⃣ Cartes visibles
+        
         for (Carte c : visibles) {
             g.setColor(Color.WHITE);
             g.fillRoundRect(x, 20, LARGEUR_CARTE, HAUTEUR_CARTE, 12, 12);

@@ -131,8 +131,6 @@ public class VueJeu extends JPanel implements EcouteurModele {
 
     @Override
     public void modeleMisAJour(Object source) {
-        // La vue est notifiée d'un changement dans le modèle.
-        // C'est ici qu'on décide quoi faire.
         if (modele.isPartieTerminee()) {
             vueMainCroupier.revelerCartes();
         }
@@ -156,7 +154,7 @@ public class VueJeu extends JPanel implements EcouteurModele {
             labelScoreCroupier.setText("Score Croupier: ?");
         }
         
-        // La mise affichée est celle du joueur humain
+        
         labelMise.setText(modele.getJoueur().getMise() + " $");
 
         ResultatPartie r = modele.getResultat();
@@ -188,7 +186,7 @@ public class VueJeu extends JPanel implements EcouteurModele {
             boutonDoubler.setEnabled(false);
             boutonSplit.setEnabled(false);
             
-            // Affiche le résultat pour le joueur humain
+            
             labelResultatGlobal.setText(r.toString().replace("_", " "));
         }
         repaint();
@@ -202,7 +200,7 @@ public class VueJeu extends JPanel implements EcouteurModele {
         return tb;
     }
 
-    // --- GETTERS ---
+    
     public JButton getBoutonTirer() { return boutonTirer; }
     public JButton getBoutonRester() { return boutonRester; }
     public JButton getBoutonDoubler() { return boutonDoubler; }
@@ -210,9 +208,7 @@ public class VueJeu extends JPanel implements EcouteurModele {
     public VueMainCroupier getVueMainCroupier() { return vueMainCroupier; }
     public JeuBlackjack getModel() { return modele; }
 
-    /**
-     * Inner class for each player's view
-     */
+  
     private class VueJoueur extends JPanel {
         private JoueurConcret joueur;
         private JPanel mainsPanel;
@@ -257,7 +253,6 @@ public class VueJeu extends JPanel implements EcouteurModele {
             List<Paquet> mains = joueur.getToutesLesMains();
             String scores = "Score: ";
 
-            // Update balance label
             labelSolde.setText("Solde: " + joueur.getSolde() + " $");
 
             for (int i = 0; i < mains.size(); i++) {
