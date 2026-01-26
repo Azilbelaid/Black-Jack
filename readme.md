@@ -69,10 +69,4 @@ Une pause automatique est intégrée entre les manches pour permettre au joueur 
 👥 Auteurs
 Projet réalisé par:
 
-Akcel Arab
-
 Belaid Azil
-
-Massinissa Meghira
-
-Mahdi Mobarek
